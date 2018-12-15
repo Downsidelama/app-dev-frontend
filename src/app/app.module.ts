@@ -10,6 +10,8 @@ import { TodosComponent } from './todos/todos.component';
 import { TodosNewComponent } from './todos-new/todos-new.component';
 import { TodosEditComponent } from './todos-edit/todos-edit.component';
 import { TodosDetailsComponent } from './todos-details/todos-details.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { TodosDetailsComponent } from './todos-details/todos-details.component';
     TodosComponent,
     TodosNewComponent,
     TodosEditComponent,
-    TodosDetailsComponent
+    TodosDetailsComponent,
+    MainPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
