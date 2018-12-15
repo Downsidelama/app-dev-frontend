@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
-  <button mat-button href="/">
+  <button mat-button routerLink="/">
     <mat-icon>home</mat-icon>
     ToDoList
   </button>
-  <button mat-button href="/issues">My issues</button>
-  <button mat-button href="/issues/add">New issues</button>
+  <button mat-button routerLink="/todos">ToDoLists</button>
+  <button mat-button routerLink="/todos/add">New ToDoList</button>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

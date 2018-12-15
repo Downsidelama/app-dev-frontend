@@ -5,10 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { RoutingModule } from './routing/routing.module';
+import { TodosComponent } from './todos/todos.component';
+import { TodosNewComponent } from './todos-new/todos-new.component';
+import { TodosEditComponent } from './todos-edit/todos-edit.component';
+import { TodosDetailsComponent } from './todos-details/todos-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodosComponent,
+    TodosNewComponent,
+    TodosEditComponent,
+    TodosDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -16,7 +25,8 @@ import { MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/mater
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
