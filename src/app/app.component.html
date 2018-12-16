@@ -3,8 +3,13 @@
     <mat-icon>home</mat-icon>
     ToDoList
   </button>
-  <button mat-button routerLink="/todos">ToDoLists</button>
-  <button mat-button routerLink="/todos/add">New ToDoList</button>
+  <div *ngIf="authService.isLoggedIn">
+    <button mat-button routerLink="/todos">ToDoLists</button>
+    <button mat-button routerLink="/todos/add">New ToDoList</button>
+  </div>
+  <div *ngIf="!authService.isLoggedIn">
+      <button mat-button routerLink="/login">Login</button>
+  </div>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
