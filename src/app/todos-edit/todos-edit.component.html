@@ -1,3 +1,27 @@
-<p>
-  todos-edit works!
-</p>
+<div class="center">
+    <h1>Edit ToDo</h1>
+      <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Name" formControlName="name" required style="width: 100%;" value="{{ todo.name }}">
+        </mat-form-field>
+    
+        <mat-form-field style="width: 100%;">
+          <textarea matInput placeholder="Content" formControlName="listcontent" style="width: 100%;"></textarea>
+        </mat-form-field>
+    
+        <mat-form-field style="width: 100%;">
+          <mat-select placeholder="Progress" formControlName="progress" required style="width: 100%;">
+            <mat-option value="NEW">New</mat-option>
+            <mat-option value="IN_PROGRESS">In progress</mat-option>
+            <mat-option value="TESTING">Testing</mat-option>
+            <mat-option value="DONE">Done</mat-option>
+          </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Labels (separate them with commas)" formControlName="labels" style="width: 100%;">
+        </mat-form-field>
+    
+        <button mat-flat-button color="primary" type="submit" [disabled]="todoForm.invalid">Save</button>
+      </form>
+    </div>

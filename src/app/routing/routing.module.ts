@@ -7,6 +7,7 @@ import { MainPageComponent } from '../main-page/main-page.component';
 import { LoginComponent } from '../login/login.component';
 import { AuthGuard } from '../auth.guard';
 import { TodosEditComponent } from '../todos-edit/todos-edit.component';
+import { TodoNewComponent } from '../todo-new/todo-new.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'todos/new',
-    component: TodosEditComponent,
+    component: TodoNewComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -31,10 +32,7 @@ const routes: Routes = [
   {
     path: 'todos/:id/edit',
     component: TodosEditComponent,
-    canActivate: [AuthGuard],
-    data: {
-      roles: ['ROLE_ADMIN']
-    }
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',

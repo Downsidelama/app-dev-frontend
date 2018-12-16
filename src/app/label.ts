@@ -1,6 +1,4 @@
 export class Label {
-    id = null
+    id = 1
     text = ''
-    created_at = ''
-    updates_at = ''
 }

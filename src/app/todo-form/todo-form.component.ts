@@ -9,15 +9,16 @@ import { ToDo } from '../todo';
 })
 export class TodoFormComponent implements OnInit {
 
+  @Input() todo: ToDo;
+  @Input() showStatus = false;
+  @Output() save = new EventEmitter<ToDo>();
+
   todoForm = this.fb.group({
     name: ['', [Validators.required]],
-    complete: [false, [Validators.required]],
     progress: ['NEW', [Validators.required]],
-    listcontent: [''],
-    labels: ['']
+    listcontent: [[]],
+    labels: [[]]
   });
-  @Input() todo: ToDo;
-  @Output() save = new EventEmitter<ToDo>();
 
   get name() { return this.todoForm.get('title'); }
   get complete() { return this.todoForm.get('complete'); }
@@ -30,6 +31,10 @@ export class TodoFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if(this.todo != null) {
+      console.log("not null");
+    }
+    console.log(this.todo);
   }
 
   ngOnChanges() {

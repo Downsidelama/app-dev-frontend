@@ -21,7 +21,8 @@ export class AuthGuard implements CanActivate {
 
     if (this.authService.isLoggedIn) {
       if (next.data && next.data.roles) {
-        if (next.data.roles.includes(this.authService.user.role)) {
+        if (next.data.roles.includes(
+          this.authService.user.role)) {
           return true;
         } else {
           return false;

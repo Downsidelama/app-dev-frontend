@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { User } from './user';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 export const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': ''
+    'Authorization': '',
   })
 };
 
@@ -22,18 +22,10 @@ export class AuthService {
 
   constructor(
     private http: HttpClient
-  ) {
-    console.log(window.localStorage.getItem('toke'));
-    const headers = { 'Content-Type': 'application/json' };
-    if (window.localStorage.getItem('token')) {
-      headers['Authorization'] = window.localStorage.getItem('token');
-    }
-    httpOptions.headers = new HttpHeaders(headers);
-  }
+  ) { }
 
   async login(username: string, password: string): Promise<boolean> {
     const token = btoa(`${username}:${password}`);
-    window.localStorage.setItem('token', token);
     httpOptions.headers =
       httpOptions.headers.set(
         'Authorization',
@@ -60,4 +52,5 @@ export class AuthService {
     this.user = null;
     this.redirectUrl = null;
   }
+
 }

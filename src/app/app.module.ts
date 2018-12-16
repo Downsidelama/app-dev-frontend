@@ -25,6 +25,7 @@ import { TodosDetailsComponent } from './todos-details/todos-details.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { LoginComponent } from './login/login.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
+import { TodoNewComponent } from './todo-new/todo-new.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
     TodosDetailsComponent,
     TodosEditComponent,
     TodosComponent,
-    TodoFormComponent
+    TodoFormComponent,
+    TodoNewComponent
   ],
   imports: [
     BrowserModule,
