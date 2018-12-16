@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import {TodosComponent} from '../todos/todos.component';
-import { TodosNewComponent } from '../todos-new/todos-new.component';
 import { TodosDetailsComponent } from '../todos-details/todos-details.component';
 import { MainPageComponent } from '../main-page/main-page.component';
 import { LoginComponent } from '../login/login.component';
+import { AuthGuard } from '../auth.guard';
+import { TodosEditComponent } from '../todos-edit/todos-edit.component';
 
 const routes: Routes = [
   {
@@ -14,15 +15,26 @@ const routes: Routes = [
   },
   {
     path: 'todos',
-    component: TodosComponent
+    component: TodosComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'todos/new',
-    component: TodosNewComponent
+    component: TodosEditComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'todos/:id',
-    component: TodosDetailsComponent
+    component: TodosDetailsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'todos/:id/edit',
+    component: TodosEditComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
   },
   {
     path: 'login',

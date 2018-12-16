@@ -5,7 +5,7 @@
   </button>
   <div *ngIf="authService.isLoggedIn">
     <button mat-button routerLink="/todos">ToDoLists</button>
-    <button mat-button routerLink="/todos/add">New ToDoList</button>
+    <button mat-button routerLink="/todos/new">New ToDoList</button>
   </div>
   <div *ngIf="!authService.isLoggedIn">
       <button mat-button routerLink="/login">Login</button>

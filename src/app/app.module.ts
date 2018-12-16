@@ -12,17 +12,19 @@ import {
   MatButtonToggleModule,
   MatFormFieldModule,
   MatInputModule,
-  MatSelectModule
+  MatSelectModule,
+  MatCardModule,
+  MatChipsModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingModule } from './routing/routing.module';
 import { TodosComponent } from './todos/todos.component';
-import { TodosNewComponent } from './todos-new/todos-new.component';
 import { TodosEditComponent } from './todos-edit/todos-edit.component';
 import { TodosDetailsComponent } from './todos-details/todos-details.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { LoginComponent } from './login/login.component';
+import { TodoFormComponent } from './todo-form/todo-form.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,8 @@ import { LoginComponent } from './login/login.component';
     LoginComponent,
     TodosDetailsComponent,
     TodosEditComponent,
-    TodosNewComponent,
-    TodosComponent
+    TodosComponent,
+    TodoFormComponent
   ],
   imports: [
     BrowserModule,
@@ -45,8 +47,10 @@ import { LoginComponent } from './login/login.component';
     MatButtonToggleModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     ReactiveFormsModule,
     MatSelectModule,
+    MatChipsModule,
     HttpClientModule
   ],
   providers: [],
